@@ -1,5 +1,8 @@
 <h1><%= @tema.name -%></h1>
 
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <ul>
     <% @tema.libros.each do |c| %>
     <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>

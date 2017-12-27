@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get 'tema/list'
   get 'tema/show'
   get 'tema/new'
+  get 'tema/edit'
+  post 'tema/create'
+  patch 'tema/update'
+  get 'tema/delete'
 
   get 'autor/list'
   get 'autor/show'

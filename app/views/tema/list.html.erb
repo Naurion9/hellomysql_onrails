@@ -7,9 +7,12 @@
     <ul id = "temas">
         <% @temas.each do |a| %>
         <li><b><%= link_to a.name, {:action => 'show', :id => a.id} %></b>
-            <%# <%= link_to ' Editar', {:action => 'edit', :id => a.id} %>
-            <%# <%= link_to ' Eliminar', {:action => 'delete', :id => a.id} %>
+            <%= link_to ' Editar', {:action => 'edit', :id => a.id} %>
+            <%= link_to ' Eliminar', {:action => 'delete', :id => a.id} %>
         </li>
         <% end %>
     </ul>
+    <%= link_to 'Añadir nuevo tema', {:action => 'new'} %>
+    <hr/>
+    <%= link_to 'Volver al menú', {:action => 'home', :controller => 'welcome'} %>
 <% end %>

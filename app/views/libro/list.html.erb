@@ -1,14 +1,7 @@
-
-<ul id = "temas">
-    <% Tema.all.each do |c| %>
-    <li><%= link_to c.name, :action => "show_temas", :id => c.id %></li>
-    <% end %>
-</ul>
-
 <% if @libros.blank? %>
     <p>No hay libros en el sistema actualmente</p>
 <% else %>
-    <p> Estos son los libros guardados actualmente</p>
+    <h4>Listado completo de libros</h4>
 
 <ul id = "libros">
     <% @libros.each do |c| %>
@@ -18,6 +11,7 @@
     </li>
     <% end %>
 </ul>
-
 <% end %>
 <p><%= link_to "Añadir libro nuevo", {:action => 'new' }%></p>
+<hr/>
+<%= link_to  "Volver al menú", {:action => 'home', :controller => 'welcome'} %>

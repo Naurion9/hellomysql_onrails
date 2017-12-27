@@ -1,0 +1,12 @@
+<% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+<% end %>
+<h1>Editar tema</h1>
+
+<% form_for @tema, :url => {:action => "update", :id => @tema} do |t| %>
+<p>Nombre: <%= t.text_field 'name' %></p>
+
+<%= t.submit "Guardar cambios" %>
+<% end %>
+
+<%= link_to 'Atrás', {:action => 'list'} %>
