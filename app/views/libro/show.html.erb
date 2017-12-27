@@ -1,0 +1,13 @@
+<h1><%= @libro.titulo %></h1>
+
+<p>
+    <strong>Precio: </strong> $<%= @libro.precio %><br />
+    <strong>Tema: </strong> <%= link_to @libro.tema.name, :action => "show_temas", :id => @libro.tema.id %><br />
+    <strong>Fecha de creación: </strong> <%= @libro.creacion %><br />
+</p>
+
+<p><%= @libro.descripcion %></p>
+
+<hr />
+
+<%= link_to 'Atrás', {:action => 'list'} %>

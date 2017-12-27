@@ -1,0 +1,15 @@
+<h1>Editar libro</h1>
+
+<%= form_for @libro, :url =>{:action => "update", :id =>@libro} do |f| %>
+
+<p>Título: <%= f.text_field 'titulo' %></p>
+<p>Autor: <%= f.collection_select :autor_id, Autor.all, :id, :name %></p>
+<p>Precio: <%= f.text_field 'precio' %></p>
+<p>Tema: <%= f.collection_select :tema_id, Tema.all, :id, :name %></p>
+<p>Descripción<br/>
+
+<%= f.text_area 'descripcion' %></p>
+<%= f.submit "Guardar cambios" %>
+<% end %>
+
+<%= link_to 'Atrás', {:action => 'list'} %>

@@ -1,0 +1,15 @@
+<% if @autors.blank? %>
+    <p>No se han introducido autores todavía<br/>
+    ¡Sé el primero en introducir uno! 
+    <%= link_to 'Añadir autor', {:action => 'new'} %></p>
+<% else %>
+    <h4>Autores:</h4>
+    <ul id = "autores">
+        <% @autors.each do |a| %>
+        <li><b><%= link_to a.name, {:action => 'show', :id => a.id} %></b>
+            <%= link_to ' Editar', {:action => 'edit', :id => a.id} %>
+            <%= link_to ' Eliminar', {:action => 'delete', :id => a.id} %>
+        </li>
+        <% end %>
+    </ul>
+<% end %>

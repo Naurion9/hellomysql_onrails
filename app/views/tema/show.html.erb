@@ -1,0 +1,12 @@
+<h1><%= @tema.name -%></h1>
+
+<ul>
+    <% @tema.libros.each do |c| %>
+    <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>
+    <% end %>
+</ul>
+
+
+
+
+

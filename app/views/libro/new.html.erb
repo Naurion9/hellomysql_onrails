@@ -1,0 +1,22 @@
+<h1>Añadir nuevo libro</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "libro_titulo">Título</label>:
+
+<%= text_field 'libros', 'titulo' %></p>
+<p><label for = "libro_autor_id">Autor</label>:
+
+<%= collection_select(:libros, :autor_id, @autors, :id, :name, prompt: 'Seleccione una opción') %></p>
+<p><label for = "libro_precio">Precio</label>:
+
+<%= text_field 'libros', 'precio' %></p>
+<p><label for = "libro_tema_id">Tema</label>:
+
+<%= collection_select(:libros, :tema_id, @temas, :id, :name, prompt: 'Seleccione una opción') %></p>
+<p><label for = "libro_descripcion">Descripción</label><br/>
+
+<%= text_area 'books', 'descripcion' %></p>
+<%= submit_tag "Crear" %>
+
+<% end -%>
+<%= link_to 'Atrás', {:action => 'list'} %>

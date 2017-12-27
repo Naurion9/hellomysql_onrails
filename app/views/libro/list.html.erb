@@ -1,0 +1,23 @@
+
+<ul id = "temas">
+    <% Tema.all.each do |c| %>
+    <li><%= link_to c.name, :action => "show_temas", :id => c.id %></li>
+    <% end %>
+</ul>
+
+<% if @libros.blank? %>
+    <p>No hay libros en el sistema actualmente</p>
+<% else %>
+    <p> Estos son los libros guardados actualmente</p>
+
+<ul id = "libros">
+    <% @libros.each do |c| %>
+    <li><b><%= link_to c.titulo, {:action => 'show', :id => c.id} -%></b>
+        <%= link_to 'Editar', {:action => 'edit', :id => c.id} %>
+        <%= link_to 'Eliminar', {:action => 'delete', :id => c.id}, data: {confirm: "¿Estás seguro de que quieres eliminar este libro?"} %>
+    </li>
+    <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Añadir libro nuevo", {:action => 'new' }%></p>

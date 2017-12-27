@@ -1,0 +1,15 @@
+<% if @temas.blank? %>
+    <p>No se han introducido temas todavía<br/>
+    ¡Sé el primero en introducir uno! 
+    <%= link_to 'Añadir tema', {:action => 'new'} %></p>
+<% else %>
+    <h4>Temas:</h4>
+    <ul id = "temas">
+        <% @temas.each do |a| %>
+        <li><b><%= link_to a.name, {:action => 'show', :id => a.id} %></b>
+            <%# <%= link_to ' Editar', {:action => 'edit', :id => a.id} %>
+            <%# <%= link_to ' Eliminar', {:action => 'delete', :id => a.id} %>
+        </li>
+        <% end %>
+    </ul>
+<% end %>
