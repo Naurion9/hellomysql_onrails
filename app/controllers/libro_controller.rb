@@ -29,7 +29,7 @@ layout 'standard'
     end
 
     def libro_params
-        params.require(:libros).permit(:titulo, :autor_id, :precio, :tema_id, :descripcion)
+        params.permit(:titulo, :autor_id, :precio, :tema_id, :descripcion)
     end
 
     def edit
@@ -41,7 +41,7 @@ layout 'standard'
     def update
         @libro = Libro.find(params[:id])
 
-        if @libro.update_attributes(libro_params)
+        if @libro.update(libro_params)
             redirect_to :action => 'show', :id => @libro
         else
             @temas = Tema.all

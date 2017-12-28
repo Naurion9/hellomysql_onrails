@@ -1,7 +1,8 @@
 <h1><%= @libro.titulo %></h1>
 
 <p>
-    <strong>Precio: </strong> $<%= @libro.precio %><br />
+    <strong>Autor: </strong> <%= link_to @libro.autor.name, :action => "show", :controller => "autor", :id => @libro.autor.id %><br/>
+    <strong>Precio: </strong> <%= @libro.precio %> €<br />
     <strong>Tema: </strong> <%= link_to @libro.tema.name, :action => "show", :controller => "tema", :id => @libro.tema.id %><br />
     <strong>Fecha de creación: </strong> <%= @libro.creacion %><br />
 </p>
