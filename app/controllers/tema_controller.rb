@@ -10,16 +10,16 @@ class TemaController < ApplicationController
         @tema = Tema.find(params[:id])
     end
 
-    def new
-        @tema = Tema.new
-    end
-
     def edit
         @tema = Tema.find(params[:id])
     end
 
+    def new
+        @tema = Tema.new
+    end
+
     def create
-        @tema = Tema.new(params.permit(:name))
+        @tema = Tema.new(params.require(:tema).permit(:name))
         
         if @tema.save
             redirect_to :action => 'list'

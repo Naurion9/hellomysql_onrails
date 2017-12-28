@@ -2,8 +2,8 @@
 
 <%= form_tag :action => 'create' do %>
 <p><label for = "tema_name">Nombre</label>:
-<%= text_field 'temas', 'name' %></p>
+<%= text_field 'tema', 'name' %></p>
 
 <%= submit_tag 'Crear' %>
-<% end -%>
+<% end %>
 <%= link_to 'Atrás', {:action => 'list'} %>

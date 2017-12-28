@@ -18,6 +18,7 @@ layout 'standard'
 
     def create
         @libro = Libro.new(libro_params)
+        @libro.creacion = DateTime.now
 
         if @libro.save
             redirect_to :action => 'list'
@@ -41,11 +42,13 @@ layout 'standard'
     def update
         @libro = Libro.find(params[:id])
 
-        if @libro.update(libro_params)
+        if @libro.update_attributes(libro_params)
+            flash[:notice] = "Modificado con éxito"
             redirect_to :action => 'show', :id => @libro
         else
             @temas = Tema.all
             @autors = Autor.all
+            flash[:error] = "No se ha podido modificar. Pruebe de nuevo."
             render :action => 'edit'
         end
 

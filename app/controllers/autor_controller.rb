@@ -36,8 +36,10 @@ class AutorController < ApplicationController
         @autor = Autor.find(params[:id])
 
         if @autor.update_attributes(autor_params)
+            flash[:notice] = "Modificado con éxito"
             redirect_to :action => 'show', :id => @autor
         else
+            flash[:error] = "No se ha podido modificar. Pruebe de nuevo."
             render :action => 'edit'
         end
     end

@@ -1,3 +1,6 @@
+<% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+<% end %>
 <h1>Editar autor</h1>
 
 <%= form_for @autor, :url => {:action => "update", :id => @autor} do |a| %>

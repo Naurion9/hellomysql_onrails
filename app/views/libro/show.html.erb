@@ -7,8 +7,8 @@
     <strong>Fecha de creación: </strong> <%= @libro.creacion %><br />
 </p>
 
-<p><%= @libro.descripcion %></p>
+<p><%= @libro.descripcion %></p><br/>
 
-<hr />
-
-<%= link_to 'Atrás', {:action => 'list'} %>
+<%= link_to 'Listado de libros', {:action => 'list'} %>
+<hr/>
+<%= link_to  "Volver al menú", {:action => 'home', :controller => 'welcome'} %>
