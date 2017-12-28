@@ -19,7 +19,7 @@ class TemaController < ApplicationController
     end
 
     def create
-        @tema = Tema.new(params.require(:temas).permit(:name))
+        @tema = Tema.new(params.permit(:name))
         
         if @tema.save
             redirect_to :action => 'list'
@@ -31,7 +31,7 @@ class TemaController < ApplicationController
     def update 
         @tema = Tema.find(params[:id])
 
-        if @tema.update_attributes(params.require(:temas).permit(:name))
+        if @tema.update_attributes(params.require(:tema).permit(:name))
             flash[:notice] = "Modificado con éxito"
             redirect_to :action => 'show', :id => @tema
         else

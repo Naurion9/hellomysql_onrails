@@ -3,13 +3,15 @@
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<ul>
-    <% @tema.libros.each do |c| %>
-    <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>
+<% if @tema.libros.blank? %>
+    <p>No hay libros asignados a este autor actualmente.</p>
+<% else %>
+    <ul>
+        <% @tema.libros.each do |c| %>
+        <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>
+        <% end %>
+    </ul>
     <% end %>
-</ul>
-
-
-
-
-
+    <%= link_to 'Atrás', {:action => 'list'} %>
+    <hr/>
+    <%= link_to  "Volver al menú", {:action => 'home', :controller => 'welcome'} %>

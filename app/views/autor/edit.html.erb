@@ -1,0 +1,11 @@
+<h1>Editar autor</h1>
+
+<%= form_for @autor, :url => {:action => "update", :id => @autor} do |a| %>
+
+<p>Nombre: <%= a.text_field 'name' %></p>
+<p>País: <%= a.text_field 'pais' %></p>
+
+<%= a.submit 'Guardar cambios' %>
+<% end %>
+
+<%= link_to  'Atrás', {:action => 'list'} %>

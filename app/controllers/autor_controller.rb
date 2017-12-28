@@ -25,7 +25,7 @@ class AutorController < ApplicationController
     end    
     
     def autor_params
-        params.require(:autors).permit(:name, :pais)
+        params.require(:autor).permit(:name, :pais)
     end
 
     def edit

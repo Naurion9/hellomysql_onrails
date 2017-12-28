@@ -1,10 +1,16 @@
 <h1><%= @autor.name -%></h1>
-
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<ul>
-    <% @autor.libros.each do |c| %>
-    <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>
-    <% end %>
-</ul>
+<% if @autor.libros.blank? %>
+    <p>No hay libros asignados a este autor actualmente.</p>
+<% else %>
+    <ul>
+        <% @autor.libros.each do |c| %>
+        <li><%= link_to c.titulo, :action => "show", :controller => 'libro', :id => c.id -%></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= link_to 'Atrás', {:action => 'list'} %>
+<hr/>
+<%= link_to  "Volver al menú", {:action => 'home', :controller => 'welcome'} %>

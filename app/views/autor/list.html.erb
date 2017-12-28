@@ -12,5 +12,7 @@
         </li>
         <% end %>
     </ul>
+    <%= link_to 'Añadir nuevo tema', {:action => 'new'} %>
+    <hr/>
     <%= link_to  "Volver al menú", {:action => 'home', :controller => 'welcome'} %>
 <% end %>

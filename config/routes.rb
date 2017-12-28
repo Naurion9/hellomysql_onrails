@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'libro/show'
   get 'libro/edit'
   get 'libro/delete'
-  get 'libro/update'
 
   get 'tema/list'
   get 'tema/show'
