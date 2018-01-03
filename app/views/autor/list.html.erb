@@ -8,7 +8,7 @@
         <% @autors.each do |a| %>
         <li><b><%= link_to a.name, {:action => 'show', :id => a.id} %></b>
             <%= link_to ' Editar', {:action => 'edit', :id => a.id} %>
-            <%= link_to ' Eliminar', {:action => 'delete', :id => a.id}, data:{confirm: "¿Seguro? Los libros asociados a esta autor serán eliminados."} %>
+            <%= link_to ' Eliminar', {:action => 'delete', :id => a.id}, data:{confirm: "¿Seguro? Los libros asociados a este autor serán eliminados."} %>
         </li>
         <% end %>
     </ul>

@@ -2,7 +2,7 @@
 
 <%= form_tag :action => 'create' do %>
 <p><label for = "tema_name">Nombre</label>:
-<%= text_field 'tema', 'name' %></p>
+<%= text_field 'tema', 'name', :required => true %></p>
 
 <%= submit_tag 'Crear' %>
 <% end %>

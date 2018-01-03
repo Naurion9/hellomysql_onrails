@@ -3,16 +3,16 @@
 <%= form_tag :action => 'create' do %>
 <p><label for = "libro_titulo">Título</label>:
 
-<%= text_field 'libro', 'titulo' %></p>
+<%= text_field 'libro', 'titulo', :required => true  %></p>
 <p><label for = "libro_autor_id">Autor</label>:
 
-<%= collection_select(:libro, :autor_id, @autors, :id, :name, prompt: 'Seleccione una opción') %></p>
+<%= collection_select(:libro, :autor_id, @autors, :id, :name, {prompt: 'Seleccione una opción'}, {required: true}) %></p>
 <p><label for = "libro_precio">Precio</label>:
 
-<%= text_field 'libro', 'precio' %></p>
+<%= number_field 'libro', 'precio' %></p>
 <p><label for = "libro_tema_id">Tema</label>:
 
-<%= collection_select(:libro, :tema_id, @temas, :id, :name, prompt: 'Seleccione una opción') %></p>
+<%= collection_select(:libro, :tema_id, @temas, :id, :name, {prompt: 'Seleccione una opción'}, {required: true}) %></p>
 <p><label for = "libro_descripcion">Descripción</label><br/>
 
 <%= text_area 'libro', 'descripcion' %></p>
